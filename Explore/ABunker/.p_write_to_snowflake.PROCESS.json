@@ -1,0 +1,25 @@
+{
+  "objectInfo" : {
+    "id" : "5Uv4EyfCHIBf2eM0gEY1WB",
+    "name" : "p_write_to_snowflake",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3WabeAzu2JQhtGc-gt-1735231-2024-07-26T16:19:39.88Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Sends session log to the registered email id. The process is triggered from the taskflow TF_IntegrationOpsTask_Demo",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "INVALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-07-26T18:07:54.920Z",
+  "objectRefs" : [ ]
+}

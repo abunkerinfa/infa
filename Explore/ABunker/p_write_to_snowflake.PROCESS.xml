@@ -1,0 +1,169 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>3WabeAzu2JQhtGc-gt-1735231-2024-07-26T16:19:39.88Z::pd.xml</types1:EntryId>
+      <types1:Name>p_write_to_snowflake</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Sends session log to the registered email id. The process is triggered from the taskflow TF_IntegrationOpsTask_Demo</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>abunker_COMM_Faisal_tspod_SO</types1:CreatedBy>
+      <types1:CreationDate>2024-07-26T16:19:40Z</types1:CreationDate>
+      <types1:ModifiedBy>abunker_COMM_Faisal_tspod_SO</types1:ModifiedBy>
+      <types1:ModificationDate>2024-07-26T16:52:03Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>abunker_COMM_Faisal_tspod_SO</types1:PublishedBy>
+      <types1:PublicationDate>2024-07-26T16:56:36Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.p_write_to_snowflake/p_write_to_snowflake.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="p_write_to_snowflake"
+                  name="p_write_to_snowflake"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Sends session log to the registered email id. The process is triggered from the taskflow TF_IntegrationOpsTask_Demo</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="LogId" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="TaskName" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="RunId" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="TaskStatus" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="StartTime" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="EndTime" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="TaskId" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="Success Source Rows"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="Failed Source Rows"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="Success Target Rows"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="Failed Target Rows"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+            </extData>
+            <flow id="z6f2757a5-3566-4526-83d5-062cf09d1fd1">
+               <start id="iddab51bb-c14e-4e35-9f07-7d6af797df94">
+                  <link id="scac9377e-095e-405f-8277-fbcf8c14a978"
+                        targetId="a15Uv4EyfCHIBf2eM0gEY1WB-Createcb222aca-d260-4842-8dee-739335a30a9e"/>
+               </start>
+               <create id="a15Uv4EyfCHIBf2eM0gEY1WB-Createcb222aca-d260-4842-8dee-739335a30a9e">
+                  <title>INTEGRATION_OPS</title>
+                  <entityName>AJB-CAI-Snowflake:INTEGRATION_OPS</entityName>
+                  <createInput>
+                     <parameter name="LOGID" source="field" updatable="true">input.LogId</parameter>
+                     <parameter name="TASKNAME" source="field" updatable="true">input.TaskName</parameter>
+                     <parameter name="RUNID" source="field" updatable="true">input.RunId</parameter>
+                     <parameter name="TASKSTATUS" source="field" updatable="true">input.TaskStatus</parameter>
+                     <parameter name="STARTTIME" source="field" updatable="true">input.StartTime</parameter>
+                     <parameter name="ENDTIME" source="field" updatable="true">input.EndTime</parameter>
+                     <parameter name="TASKID" source="field" updatable="true">input.TaskId</parameter>
+                     <parameter name="SUCCESS_SOURCE_ROWS" source="field" updatable="true">input.Success Source Rows</parameter>
+                     <parameter name="FAILED_SOURCE_ROWS" source="field" updatable="true">input.Failed Source Rows</parameter>
+                     <parameter name="SUCCESS_TARGET_ROWS" source="field" updatable="true">input.Success Target Rows</parameter>
+                     <parameter name="FAILED_TARGET_ROWS" source="field" updatable="true">input.Failed Target Rows</parameter>
+                  </createInput>
+                  <link id="uc7156042-5e5c-461f-b987-d0f95e9080f3"
+                        targetId="a15Uv4EyfCHIBf2eM0gEY1WB-c"/>
+               </create>
+               <end id="a15Uv4EyfCHIBf2eM0gEY1WB-c">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>7f8cb8e1-5393-454d-8eae-b386f863bd24</ns1:Id>
+               <ns1:Name>test</ns1:Name>
+               <ns1:CreatedBy>abunker_COMM_Faisal_tspod_SO</ns1:CreatedBy>
+               <ns1:CreationDate>2024-07-26T17:39:04Z</ns1:CreationDate>
+               <ns1:ModifiedBy>abunker_COMM_Faisal_tspod_SO</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-07-26T17:39:04Z</ns1:ModificationDate>
+               <ns1:Data format="json">{
+    "LogId": "test",
+    "TaskName": "test",
+    "RunId": "test",
+    "TaskStatus": "test",
+    "StartTime": "test",
+    "EndTime": "test",
+    "TaskId": "test",
+    "Success Source Rows": "test",
+    "Failed Source Rows": "test",
+    "Success Target Rows": "test",
+    "Failed Target Rows": "test"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>5Uv4EyfCHIBf2eM0gEY1WB</types1:GUID>
+      <types1:DisplayName>p_write_to_snowflake</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-07-26T18:07:54.787Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
