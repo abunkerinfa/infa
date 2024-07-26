@@ -1,0 +1,312 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Jg7Gaaa-gt-987367-2024-07-26T15:39:19.575Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_master_customer-3</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>abunker_COMM_Faisal_tspod_SO</types1:CreatedBy>
+      <types1:CreationDate>2024-07-26T15:39:20Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_master_customer"
+                   name="tf_master_customer-3"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="mtt_union" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-union-customer-5PNrYa0CmEafV03NS5PcA6</option>
+                  </options>
+               </field>
+               <field description="" name="mtt_cleanse" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-cleanse-customer-4yqQhHlQDCSdo4DoLmCrYI</option>
+                  </options>
+               </field>
+               <field description="" name="mtt_dedupe" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-dedupe-consolidate-customer-4I4Dk8CtpCpjIkl8BAhtOg</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="true" tracingLevel="verbose">
+               <rest/>
+               <emailProperties emailOnSuspend="true">
+                  <emailTo>abunker@informatica.com</emailTo>
+                  <emailCc/>
+                  <emailSubject>Customer Master Taskflow issue</emailSubject>
+                  <emailContentType>html</emailContentType>
+                  <emailBody>&lt;p&gt;Hi,&lt;/p&gt;
+&lt;p&gt;The process to master our customers has ran in to an issue. Please log in to &lt;a href="https://dmp-us.informaticacloud.com/identity-service/home"&gt;Informatica Cloud&lt;/a&gt; to identify and remediate the issue.&lt;/p&gt;
+&lt;p&gt;Thank you.&lt;/p&gt;</emailBody>
+               </emailProperties>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="leq6i887" targetId="leq6i88o"/>
+               </start>
+               <eventContainer id="leq6i88o">
+                  <service id="leq6i886">
+                     <title>mtt_union</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_union_customer</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">5PNrYa0CmEafV03NS5PcA6</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-union-customer-5PNrYa0CmEafV03NS5PcA6">temp.mtt_union</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mtt_union/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mtt_union/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mtt_union/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mtt_union/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mtt_union/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.mtt_union/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.mtt_union/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.mtt_union/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.mtt_union/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mtt_union/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mtt_union/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.mtt_union/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.mtt_union/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.mtt_union/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="leq6i88d" targetId="leq6i89p"/>
+                  <events>
+                     <catch faultField="temp.mtt_union/fault"
+                            id="leq6i88m"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mtt_union/fault"
+                            id="leq6i88n"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="leq6i89p">
+                  <service id="leq6i88c">
+                     <title>mtt_cleanse</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_cleanse_customer</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">4yqQhHlQDCSdo4DoLmCrYI</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-cleanse-customer-4yqQhHlQDCSdo4DoLmCrYI">temp.mtt_cleanse</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mtt_cleanse/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.mtt_cleanse/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="leq6i88j" targetId="leq6i8aq"/>
+                  <events>
+                     <catch faultField="temp.mtt_cleanse/fault"
+                            id="leq6i89n"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mtt_cleanse/fault"
+                            id="leq6i89o"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="leq6i8aq">
+                  <service id="leq6i88i">
+                     <title>mtt_dedupe</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_dedupe_consolidate_customer</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">4I4Dk8CtpCpjIkl8BAhtOg</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field"
+                                      to="mct-dedupe-consolidate-customer-4I4Dk8CtpCpjIkl8BAhtOg">temp.mtt_dedupe</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mtt_dedupe/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.mtt_dedupe/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="lyq3m9w4" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.mtt_dedupe/fault"
+                            id="leq6i8ao"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mtt_dedupe/fault"
+                            id="leq6i8ap"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-union-customer-5PNrYa0CmEafV03NS5PcA6"
+                              isByCopy="true"
+                              name="mct-union-customer-5PNrYa0CmEafV03NS5PcA6">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-cleanse-customer-4yqQhHlQDCSdo4DoLmCrYI"
+                              isByCopy="true"
+                              name="mct-cleanse-customer-4yqQhHlQDCSdo4DoLmCrYI">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-dedupe-consolidate-customer-4I4Dk8CtpCpjIkl8BAhtOg"
+                              isByCopy="true"
+                              name="mct-dedupe-consolidate-customer-4I4Dk8CtpCpjIkl8BAhtOg">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>0rWeVkmZVawbXL4wNNQUQV</types1:GUID>
+      <types1:DisplayName>tf_master_customer</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-07-26T15:39:44.955Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
