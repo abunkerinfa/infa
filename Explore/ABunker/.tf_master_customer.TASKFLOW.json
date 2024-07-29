@@ -14,13 +14,13 @@
       "contextAttributes" : null,
       "additionalInfo" : {
         "description" : "",
-        "contentType" : null,
+        "contentType" : "application/json; charset=utf-8",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "xml",
-  "updateTime" : "2024-07-26T15:39:45.099Z",
+  "updateTime" : "2024-07-29T18:55:27.390Z",
   "objectRefs" : [ {
     "id" : "5PNrYa0CmEafV03NS5PcA6",
     "name" : "mct_union_customer",
@@ -81,5 +81,25 @@
       }
     },
     "path" : "/Explore/ABunker/BECU"
+  }, {
+    "id" : "5Uv4EyfCHIBf2eM0gEY1WB",
+    "name" : "p_write_to_snowflake",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3WabeAzu2JQhtGc-gt-1735231-2024-07-26T16:19:39.88Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Sends session log to the registered email id. The process is triggered from the taskflow TF_IntegrationOpsTask_Demo",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "INVALID"
+      }
+    },
+    "path" : "/Explore/ABunker"
   } ]
 }
