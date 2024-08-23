@@ -1,0 +1,85 @@
+{
+  "objectInfo" : {
+    "id" : "8C4fnVAuUrQekJSuFFoK4z",
+    "name" : "g1_demo_tf",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "UMi4tciSrZMSPfX-gt-131433-2024-07-02T14:58:50.752Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-08-23T17:55:09.127Z",
+  "objectRefs" : [ {
+    "id" : "3jxvjBu4k4dg9dvQ5iiLqu",
+    "name" : "fmi_decrypt_move",
+    "type" : "MI_TASK",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "10516"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/ABunker"
+  }, {
+    "id" : "76mP5bWaNLZenrYIJCnlsZ",
+    "name" : "g1_file_listener",
+    "type" : "MI_FILE_LISTENER",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "10307"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/ABunker"
+  }, {
+    "id" : "iWmlhS5Y5Mfe8n9doFbEyV",
+    "name" : "mct_g1_macro_demo",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010SXT0Z000000000029"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/ABunker"
+  } ]
+}

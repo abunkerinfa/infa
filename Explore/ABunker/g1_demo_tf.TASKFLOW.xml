@@ -1,0 +1,355 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>UMi4tciSrZMSPfX-gt-131433-2024-07-02T14:58:50.752Z::tf.xml</types1:EntryId>
+      <types1:Name>g1_demo_tf</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>abunker_COMM_Faisal_tspod_SO</types1:CreatedBy>
+      <types1:CreationDate>2024-07-02T14:58:51Z</types1:CreationDate>
+      <types1:ModifiedBy>abunker_COMM_Faisal_tspod_SO</types1:ModifiedBy>
+      <types1:ModificationDate>2024-07-03T18:34:52Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>abunker_COMM_Faisal_tspod_SO</types1:PublishedBy>
+      <types1:PublicationDate>2024-07-03T18:38:28Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.g1_demo_tf/g1_demo_tf.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="g1_demo_tf"
+                   name="g1_demo_tf"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="g1_file_listener" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">76mP5bWaNLZenrYIJCnlsZ</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="file decrypt and move" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:fmi-decrypt-move-3jxvjBu4k4dg9dvQ5iiLqu</option>
+                  </options>
+               </field>
+               <field description="" name="mct_file_pickup" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mct-g1-macro-demo-iWmlhS5Y5Mfe8n9doFbEyV</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <event eventSource="fileListenerTask:g1_file_listener"/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="ly4j7vy1" targetId="ly4j7vy5"/>
+               </start>
+               <eventContainer id="ly4j7vy5">
+                  <service id="ly4j7vy0">
+                     <title>file decrypt and move</title>
+                     <serviceName>DIExecuteServiceTaskIngestionTaskImpl</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">fmi_decrypt_move</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">3jxvjBu4k4dg9dvQ5iiLqu</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MI_TASK</parameter>
+                        <parameter name="serviceProviderId" source="constant" updatable="true">filelistener</parameter>
+                        <parameter name="serviceProviderContextPath"
+                                   source="constant"
+                                   updatable="true">mitask/</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="fmi-decrypt-move-3jxvjBu4k4dg9dvQ5iiLqu">temp.file decrypt and move</operation>
+                           <operation source="constant"
+                                      to="fmi-decrypt-move-3jxvjBu4k4dg9dvQ5iiLqu/input[1]/CATEGORYGeneral[1]/sourceConnectionType">local</operation>
+                           <operation source="constant"
+                                      to="fmi-decrypt-move-3jxvjBu4k4dg9dvQ5iiLqu/input[1]/CATEGORYGeneral[1]/targetConnectionType">local</operation>
+                           <operation source="constant"
+                                      to="fmi-decrypt-move-3jxvjBu4k4dg9dvQ5iiLqu/input[1]/CATEGORYGeneral[1]/maxFileLimit">0</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.file decrypt and move/output/successFiles">successFiles</operation>
+                        <operation source="field" to="temp.file decrypt and move/output/failedFiles">failedFiles</operation>
+                        <operation source="field" to="temp.file decrypt and move/output/fileDetails">fileDetails</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ly4mhhh0" targetId="ly4mhhho"/>
+                  <events>
+                     <catch faultField="temp.file decrypt and move/fault"
+                            id="ly4j7vy4"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="ly4mhhho">
+                  <service id="ly4mhhgz">
+                     <title>mct_file_pickup</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_g1_macro_demo</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">iWmlhS5Y5Mfe8n9doFbEyV</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-g1-macro-demo-iWmlhS5Y5Mfe8n9doFbEyV">temp.mct_file_pickup</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.mct_file_pickup/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.mct_file_pickup/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="ly4mhhhu" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.mct_file_pickup/fault"
+                            id="ly4mhhbn"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.mct_file_pickup/fault"
+                            id="ly4mhhbo"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="fmi-decrypt-move-3jxvjBu4k4dg9dvQ5iiLqu"
+                              isByCopy="true"
+                              name="fmi-decrypt-move-3jxvjBu4k4dg9dvQ5iiLqu">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-g1-macro-demo-iWmlhS5Y5Mfe8n9doFbEyV"
+                              isByCopy="true"
+                              name="mct-g1-macro-demo-iWmlhS5Y5Mfe8n9doFbEyV">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895">
+                  <description>This process object represents a taskflow specific file task field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Arrived Files"
+                            name="arrivedFiles"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-arrivedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field label="Update Files"
+                            name="updatedFiles"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-updatedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field label="Deleted Files"
+                            name="deletedFiles"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">$po:INTERNALB2BFILELISTENER1565084895-deletedFiles</option>
+                           <option name="relationshipName">Child</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-updatedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-updatedFiles">
+                  <description>This process object represents a updatedFiles structure of the file task field.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path"
+                            name="path"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Name"
+                            name="name"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Size"
+                            name="size"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Last Modified"
+                            name="lastModified"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-arrivedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-arrivedFiles">
+                  <description>This process object represents a arrivedFiles structure of the file task field.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path"
+                            name="path"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Name"
+                            name="name"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Size"
+                            name="size"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Last Modified"
+                            name="lastModified"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INTERNALB2BFILELISTENER1565084895-deletedFiles"
+                              isByCopy="true"
+                              name="INTERNALB2BFILELISTENER1565084895-deletedFiles">
+                  <description>This process object represents file listener task deletedFiles structure.This is in case of taskflow.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Path"
+                            name="path"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Name"
+                            name="name"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Size"
+                            name="size"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field label="Last Modified"
+                            name="lastModified"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>8C4fnVAuUrQekJSuFFoK4z</types1:GUID>
+      <types1:DisplayName>g1_demo_tf</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-08-23T17:55:08.447Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
