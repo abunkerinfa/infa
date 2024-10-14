@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "5dooulxq82fjPbATZSQ18w",
+    "name" : "Validate_EmailAddress",
+    "type" : "RULE_SPECIFICATION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "5dooulxq82fjPbATZSQ18w"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "The rule spec validates whether the input is a EmailAddress",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-10-14T17:06:59.192Z",
+  "objectRefs" : [ {
+    "id" : "61B90CLza5sf8x4LCXJsUW",
+    "name" : "Email_Domain_Name_Infa",
+    "type" : "DICTIONARY",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "61B90CLza5sf8x4LCXJsUW"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "contains domain names for email address  (eg: .com , .net  , etc)",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Standard CDQ Assets/Dictionaries_General"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
