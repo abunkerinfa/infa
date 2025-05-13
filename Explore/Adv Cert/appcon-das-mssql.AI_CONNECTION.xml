@@ -1,0 +1,71 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>pw0VPNzUzeA8rJ4-gt-688015-2024-11-20T22:02:46.252Z::conn.xml</types1:EntryId>
+      <types1:Name>appcon-das-mssql</types1:Name>
+      <types1:ParentFlowIds>C46snSDg8SOlA1v-gt-829425-2024-11-23T23:10:46.457Z::pd.xml,eA1vyoY2G7QnG5Y-gt-753208-2024-11-21T23:50:25.06Z::pd.xml,Qk81V4AdypKwKBq-gt-687931-2024-11-20T21:58:33.679Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:idmc04-comm-faisal-primary.infacloud.eu</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>abunker_COMM_Faisal_tspod_SO</types1:CreatedBy>
+      <types1:CreationDate>2024-11-20T22:02:46Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>abunker_COMM_Faisal_tspod_SO</types1:PublishedBy>
+      <types1:PublicationDate>2024-12-10T20:50:25Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/appcon-das-mssql/appcon-das-mssql.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="appcon-das-mssql"
+                     label="appcon-das-mssql"
+                     name="appcon-das-mssql">
+            <description/>
+            <tags>.agent:idmc04-comm-faisal-primary.infacloud.eu</tags>
+            <agent>idmc04-comm-faisal-primary.infacloud.eu</agent>
+            <attributes>
+               <attribute encrypted="false"
+                          name="driver"
+                          value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+               <attribute encrypted="false"
+                          name="jdbcUrl"
+                          value="jdbc:sqlserver://;serverName=sqlserverdb-1.cqjxbjffy8hy.us-west-1.rds.amazonaws.com;databaseName=demodb"/>
+               <attribute encrypted="false" name="username" value="admin"/>
+               <attribute encrypted="true" name="password" value=""/>
+               <attribute encrypted="false" name="schema" value="demodb"/>
+               <attribute encrypted="false" name="includeTables" value=""/>
+               <attribute encrypted="false" name="excludeTables" value=""/>
+               <attribute encrypted="false" name="checkSqlInjection" value=""/>
+               <attribute encrypted="false" name="initialSize" value=""/>
+               <attribute encrypted="false" name="maxActive" value=""/>
+               <attribute encrypted="false" name="minIdle" value=""/>
+               <attribute encrypted="false" name="maxIdle" value=""/>
+               <attribute encrypted="false" name="maxWait" value=""/>
+               <attribute encrypted="false" name="defaultTransactionIsolation" value=""/>
+               <attribute encrypted="false" name="minEvictableIdleTimeMillis" value=""/>
+               <attribute encrypted="false" name="numTestsPerEvictionRun" value=""/>
+               <attribute encrypted="false" name="testOnBorrow" value=""/>
+               <attribute encrypted="false" name="testOnReturn" value=""/>
+               <attribute encrypted="false" name="testWhileIdle" value=""/>
+               <attribute encrypted="false" name="validationQuery" value=""/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="true"
+                               connectorPath="project:/rt.connector/DAS_MSSQL/DAS_MSSQL_svcDef.xml"
+                               guid="cossedBgl2kbbHOqHTmIAL"
+                               name="DAS_MSSQL"
+                               plugin="DAS"
+                               supportsConnectionTest="true"
+                               uuid="56115207-de49-4280-92b3-b2fa7fc214e5">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>8KPn1mGZchvgM7wUmdOu21</types1:GUID>
+      <types1:DisplayName>appcon-das-mssql</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-05-13T16:07:58.454Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

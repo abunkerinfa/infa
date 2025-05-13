@@ -1,0 +1,674 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>GsciQlBWlD2pHAL-gt-170718-2024-12-16T21:57:56.522Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_get_records_flow</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>abunker_COMM_Faisal_tspod_SO</types1:CreatedBy>
+      <types1:CreationDate>2024-12-16T21:57:57Z</types1:CreationDate>
+      <types1:ModifiedBy>abunker_COMM_Faisal_tspod_SO</types1:ModifiedBy>
+      <types1:ModificationDate>2024-12-17T17:36:48Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>abunker_COMM_Faisal_tspod_SO</types1:PublishedBy>
+      <types1:PublicationDate>2024-12-17T17:36:54Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_get_records_flow/tf_get_records_flow.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_get_records_flow"
+                   name="tf_get_records_flow"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Get records 1" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-get-records-ariba-1-fOeorozjm0ggYH5OsYgTGM</option>
+                  </options>
+               </field>
+               <field description="" name="Get records 2" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-get-records-ariba-2-8G3A3lwxE6Ri7P5p9OVg8O</option>
+                  </options>
+               </field>
+               <field description="" name="Get records 3" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-get-records-ariba-3-coOULvb5dQvjqO7b3ZWkcP</option>
+                  </options>
+               </field>
+               <field description="" name="Get records 4" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-get-records-ariba-4-a020FYH3y6FjmVoNtw7y4G</option>
+                  </options>
+               </field>
+               <field description="" name="Get records 5" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-get-records-ariba-5-4h4m8WCP3jykAPG5UsFhms</option>
+                  </options>
+               </field>
+               <field description="" name="Get records 6" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mct-get-records-ariba-6-5M9a8nN1CXbd34B5w7rcKz</option>
+                  </options>
+               </field>
+               <field description="" name="Zip files" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+               <field description="" name="Send zip to Ariba" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="m4rkqk1c" targetId="m4rkqk2t"/>
+               </start>
+               <eventContainer id="m4rkqk2t">
+                  <service id="m4rkqk1b">
+                     <title>Get records 1</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_get_records_ariba_1</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">fOeorozjm0ggYH5OsYgTGM</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-get-records-ariba-1-fOeorozjm0ggYH5OsYgTGM">temp.Get records 1</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Get records 1/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Get records 1/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Get records 1/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Get records 1/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Get records 1/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Get records 1/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Get records 1/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Get records 1/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Get records 1/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Get records 1/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Get records 1/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Get records 1/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Get records 1/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Get records 1/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m4rkqk1i" targetId="m4rkqk4e"/>
+                  <events>
+                     <catch faultField="temp.Get records 1/fault"
+                            id="m4rkqk2r"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Get records 1/fault"
+                            id="m4rkqk2s"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="m4rkqk4e">
+                  <service id="m4rkqk1h">
+                     <title>Get records 2</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_get_records_ariba_2</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">8G3A3lwxE6Ri7P5p9OVg8O</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-get-records-ariba-2-8G3A3lwxE6Ri7P5p9OVg8O">temp.Get records 2</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Get records 2/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Get records 2/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Get records 2/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Get records 2/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Get records 2/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Get records 2/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Get records 2/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Get records 2/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Get records 2/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Get records 2/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Get records 2/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Get records 2/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Get records 2/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Get records 2/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m4rkqk1o" targetId="m4rkqk5h"/>
+                  <events>
+                     <catch faultField="temp.Get records 2/fault"
+                            id="m4rkqk4c"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Get records 2/fault"
+                            id="m4rkqk4d"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="m4rkqk5h">
+                  <service id="m4rkqk1n">
+                     <title>Get records 3</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_get_records_ariba_3</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">coOULvb5dQvjqO7b3ZWkcP</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-get-records-ariba-3-coOULvb5dQvjqO7b3ZWkcP">temp.Get records 3</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Get records 3/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Get records 3/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Get records 3/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Get records 3/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Get records 3/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Get records 3/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Get records 3/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Get records 3/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Get records 3/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Get records 3/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Get records 3/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Get records 3/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Get records 3/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Get records 3/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m4rkqk1u" targetId="m4rkqk72"/>
+                  <events>
+                     <catch faultField="temp.Get records 3/fault"
+                            id="m4rkqk5f"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Get records 3/fault"
+                            id="m4rkqk5g"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="m4rkqk72">
+                  <service id="m4rkqk1t">
+                     <title>Get records 4</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_get_records_ariba_4</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">a020FYH3y6FjmVoNtw7y4G</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-get-records-ariba-4-a020FYH3y6FjmVoNtw7y4G">temp.Get records 4</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Get records 4/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Get records 4/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Get records 4/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Get records 4/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Get records 4/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Get records 4/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Get records 4/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Get records 4/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Get records 4/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Get records 4/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Get records 4/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Get records 4/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Get records 4/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Get records 4/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m4rkqk20" targetId="m4rkqk85"/>
+                  <events>
+                     <catch faultField="temp.Get records 4/fault"
+                            id="m4rkqk70"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Get records 4/fault"
+                            id="m4rkqk71"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="m4rkqk85">
+                  <service id="m4rkqk1z">
+                     <title>Get records 5</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_get_records_ariba_5</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">4h4m8WCP3jykAPG5UsFhms</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-get-records-ariba-5-4h4m8WCP3jykAPG5UsFhms">temp.Get records 5</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Get records 5/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Get records 5/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Get records 5/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Get records 5/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Get records 5/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Get records 5/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Get records 5/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Get records 5/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Get records 5/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Get records 5/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Get records 5/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Get records 5/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Get records 5/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Get records 5/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m4rkqk26" targetId="m4rkqk9q"/>
+                  <events>
+                     <catch faultField="temp.Get records 5/fault"
+                            id="m4rkqk83"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Get records 5/fault"
+                            id="m4rkqk84"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="m4rkqk9q">
+                  <service id="m4rkqk25">
+                     <title>Get records 6</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mct_get_records_ariba_6</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">5M9a8nN1CXbd34B5w7rcKz</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mct-get-records-ariba-6-5M9a8nN1CXbd34B5w7rcKz">temp.Get records 6</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Get records 6/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Get records 6/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Get records 6/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Get records 6/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Get records 6/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Get records 6/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Get records 6/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Get records 6/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Get records 6/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Get records 6/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Get records 6/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Get records 6/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Get records 6/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Get records 6/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m4soq8l6" targetId="m4soq8m2"/>
+                  <events>
+                     <catch faultField="temp.Get records 6/fault"
+                            id="m4rkqk9o"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Get records 6/fault"
+                            id="m4rkqk9p"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="m4soq8m2">
+                  <service id="m4soq8l5">
+                     <title>Zip files</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">Zip files</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">010SXT2500000000000B:idmc04-comm-faisal-primary.infacloud.eu</parameter>
+                        <parameter name="Max Wait" source="constant">86400</parameter>
+                        <parameter name="Script Name" source="constant"/>
+                        <parameter name="Input Arguments" source="constant"/>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">9bveorHzSgkiXq7z6QyrOK</parameter>
+                        <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="INFA-commandTask">temp.Zip files</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/apps/infa/zip_folder.bash</operation>
+                           <operation source="constant"
+                                      to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Zip files/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Zip files/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Zip files/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Zip files/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.Zip files/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.Zip files/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m4soq8mk" targetId="m4soq8ng"/>
+                  <events>
+                     <catch faultField="temp.Zip files/fault"
+                            id="m4soq8m1"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="m4soq8ng">
+                  <service id="m4soq8mj">
+                     <title>Send zip to Ariba</title>
+                     <serviceName>ICSExecuteCommandTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="constant">Send zip to Ariba</parameter>
+                        <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                        <parameter name="Runtime Environment" source="constant">010SXT2500000000000B:idmc04-comm-faisal-primary.infacloud.eu</parameter>
+                        <parameter name="Max Wait" source="constant">86400</parameter>
+                        <parameter name="Script Name" source="constant"/>
+                        <parameter name="Input Arguments" source="constant"/>
+                        <parameter name="Work Directory" source="constant"/>
+                        <parameter name="RuntimeEnvGUID" source="constant">9bveorHzSgkiXq7z6QyrOK</parameter>
+                        <parameter name="FailTaskIfAnyScriptFails" source="constant">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="INFA-commandTask">temp.Send zip to Ariba</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/name">Script1</operation>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/scriptName">/apps/infa/call_process.bash</operation>
+                           <operation source="constant"
+                                      to="INFA-commandTask/input[1]/script-1/inputArguments"/>
+                           <operation source="constant" to="INFA-commandTask/input[1]/script-1/workDir"/>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Send zip to Ariba/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Send zip to Ariba/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Send zip to Ariba/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Send zip to Ariba/output/Exit_Code">Exit Code</operation>
+                        <operation source="field" to="temp.Send zip to Ariba/output/Execution_Status">Execution Status</operation>
+                        <operation source="field" to="temp.Send zip to Ariba/output/Std_Error">Std Error</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m4soq8ml" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.Send zip to Ariba/fault"
+                            id="m4soq8nf"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-get-records-ariba-1-fOeorozjm0ggYH5OsYgTGM"
+                              isByCopy="true"
+                              name="mct-get-records-ariba-1-fOeorozjm0ggYH5OsYgTGM">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-get-records-ariba-2-8G3A3lwxE6Ri7P5p9OVg8O"
+                              isByCopy="true"
+                              name="mct-get-records-ariba-2-8G3A3lwxE6Ri7P5p9OVg8O">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-get-records-ariba-3-coOULvb5dQvjqO7b3ZWkcP"
+                              isByCopy="true"
+                              name="mct-get-records-ariba-3-coOULvb5dQvjqO7b3ZWkcP">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-get-records-ariba-4-a020FYH3y6FjmVoNtw7y4G"
+                              isByCopy="true"
+                              name="mct-get-records-ariba-4-a020FYH3y6FjmVoNtw7y4G">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-get-records-ariba-5-4h4m8WCP3jykAPG5UsFhms"
+                              isByCopy="true"
+                              name="mct-get-records-ariba-5-4h4m8WCP3jykAPG5UsFhms">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mct-get-records-ariba-6-5M9a8nN1CXbd34B5w7rcKz"
+                              isByCopy="true"
+                              name="mct-get-records-ariba-6-5M9a8nN1CXbd34B5w7rcKz">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>4tWJqDJsCyhgdj4BYQCSUq</types1:GUID>
+      <types1:DisplayName>tf_get_records_flow</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-05-13T16:08:00.321Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,165 @@
+{
+  "name" : "mct_publish_records",
+  "runtimeEnvironmentId" : "@9bveorHzSgkiXq7z6QyrOK",
+  "runtimeEnvironmentName" : "idmc04-comm-faisal-primary.infacloud.eu",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$s_paginated_api$",
+      "type" : "H_SOURCE",
+      "label" : "s_paginated_api",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "originalPath" : "s_paginated_api"
+      },
+      "sourceConnectionId" : "@5a3XXyitcw8jwsDCl1J6iP",
+      "connectionName" : "Paginated API",
+      "sourceObject" : "get_records",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "requestXml" : "{\n  \"offset\" : $$offset,\n  \"fetch\" : $$fetch\n}",
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "get_records",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "metadataVersion" : "45000060",
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    },
+    {
+      "name" : "$t_hub$",
+      "type" : "TARGET",
+      "label" : "cih_param",
+      "uiProperties" : {
+        "cnxtype" : "Cloud Integration Hub",
+        "connectionParameterized" : "true",
+        "paramName" : "cih_param",
+        "paramType-mapping" : "Connection",
+        "logcnx" : "cih_param",
+        "objlabel" : "cih_obj_param",
+        "objectParameterized" : "true",
+        "objectParamName" : "cih_obj_param",
+        "objectParamType-mapping" : "DataObject",
+        "supportApplyDDLChanges" : "true",
+        "originalPath" : "t_hub"
+      },
+      "targetConnectionId" : "@1tjzYYn5XlecNp0AyIvWa3",
+      "connectionName" : "Cloud Integration Hub",
+      "targetObject" : "Adv_cert_topic/Table",
+      "targetObjectLabel" : "Adv_cert_topic/Table",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "runtimeAttrs" : {
+        "Cloud Integration Hub Publication name" : "CDI_Publish",
+        "Cloud Integration Hub Commit interval" : "200"
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "Adv_cert_topic/Table",
+      "objectLabel" : "Adv_cert_topic/Table",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionParameterName" : "cih_param",
+        "objectParameterName" : "cih_obj_param",
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "lastRunTime" : 1734623663000,
+  "mappingId" : "@82v71g7JpsdlLmnvSt4mIG",
+  "mappingTemplateName" : "m_publish_records",
+  "sessionPropertiesList" : [
+    {
+      "name" : "Pushdown Optimization",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Context",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Fallback Option",
+      "value" : "Partial PDO"
+    }
+  ],
+  "inOutParameters" : [
+    {
+      "name" : "offset",
+      "initialValue" : "0",
+      "datatype" : "INTEGER",
+      "precision" : "10",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "COUNT",
+      "currentValue" : "450"
+    },
+    {
+      "name" : "fetch",
+      "initialValue" : "50",
+      "datatype" : "INTEGER",
+      "precision" : "10",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "COUNT",
+      "currentValue" : "50"
+    }
+  ],
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : true,
+  "enableParallelRun" : false,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "schemaMode" : "async",
+  "valid" : true,
+  "optimizationPlan" : "NONE",
+  "allowMaxFieldLength" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2025-05-13 09:07:59 PDT"
+}

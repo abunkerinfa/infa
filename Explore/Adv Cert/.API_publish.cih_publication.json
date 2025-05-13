@@ -1,0 +1,67 @@
+{
+  "objectInfo" : {
+    "id" : "5s3ybmn9HsNiGOYZL9Esi4",
+    "name" : "API_publish",
+    "type" : "cih_publication",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3716"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-05-13T16:08:01.433Z",
+  "objectRefs" : [ {
+    "id" : "990p8qtylYnecNltTJDN6w",
+    "name" : "Adv_cert_topic",
+    "type" : "cih_topic",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "4721"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Adv Cert"
+  }, {
+    "id" : "iMtqmadEw8MkXgdYxrf5W7",
+    "name" : "App_Publication",
+    "type" : "cih_application",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "4325"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Adv Cert"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

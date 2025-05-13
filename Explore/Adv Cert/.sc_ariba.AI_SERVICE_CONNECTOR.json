@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "fWl1z5u6fQ4cN7Cksdf9wm",
+    "name" : "sc_ariba",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "doYsjqluQgabcjk-gt-2201189-2024-12-16T19:18:36.049Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-05-13T16:08:01.420Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

@@ -1,0 +1,44 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>dp53nQciSrZMSPf-gt-2199916-2024-12-16T19:36:43.049Z::conn.xml</types1:EntryId>
+      <types1:Name>app-conn-ariba</types1:Name>
+      <types1:ParentFlowIds>txGomUhGdwOLIFv-gt-2269075-2024-12-16T23:26:37.322Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>abunker_COMM_Faisal_tspod_SO</types1:CreatedBy>
+      <types1:CreationDate>2024-12-16T19:36:43Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>abunker_COMM_Faisal_tspod_SO</types1:PublishedBy>
+      <types1:PublicationDate>2024-12-16T19:39:49Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/app-conn-ariba/app-conn-ariba.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="app-conn-ariba"
+                     label="app-conn-ariba"
+                     name="app-conn-ariba">
+            <description/>
+            <tags/>
+            <agent/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/sc_ariba/sc_ariba_svcDef.xml"
+                               guid="fWl1z5u6fQ4cN7Cksdf9wm"
+                               name="sc_ariba"
+                               supportsConnectionTest="false"
+                               uuid="8fe3a110-5d8c-4914-afa6-024078e52fdc">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>5hXljgoKG0Mc86HdsHQiqR</types1:GUID>
+      <types1:DisplayName>app-conn-ariba</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-05-13T16:07:58.481Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

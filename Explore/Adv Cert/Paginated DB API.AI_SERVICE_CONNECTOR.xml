@@ -1,0 +1,190 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>iaa-gt-1554152-2024-12-06T19:56:52.141Z::svc.xml</types1:EntryId>
+      <types1:Name>Paginated_DB_API</types1:Name>
+      <types1:ParentFlowIds>Cs4MAreFRqXpIW7-gt-1555805-2024-12-06T21:05:04.61Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>Paginate_query_db</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>abunker_COMM_Faisal_tspod_SO</types1:CreatedBy>
+      <types1:CreationDate>2024-12-06T19:56:52Z</types1:CreationDate>
+      <types1:ModifiedBy>abunker_COMM_Faisal_tspod_SO</types1:ModifiedBy>
+      <types1:ModificationDate>2025-03-25T20:19:55Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>abunker_COMM_Faisal_tspod_SO</types1:PublishedBy>
+      <types1:PublicationDate>2024-12-10T18:18:36Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/Paginated_DB_API/Paginated_DB_API_svcDef.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="Paginated DB API"
+                            label=""
+                            name="Paginated_DB_API"
+                            uuid="44886c04-90bd-4dd3-8184-c1d802fefe74">
+            <description>Paginate_query_db</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description=""
+                                    label="client_id"
+                                    masked="true"
+                                    name="client_id"
+                                    required="false"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description=""
+                                    label="client_secret"
+                                    masked="true"
+                                    name="client_secret"
+                                    required="false"
+                                    testWith=""
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       isAbstract="false"
+                       label="Get_records"
+                       maxRedirects="100"
+                       name="Get_records"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get_records</description>
+                  <input>
+                     <parameter description=""
+                                label="fetch"
+                                name="fetch"
+                                required="true"
+                                testWith="50"
+                                type="int"/>
+                     <parameter description=""
+                                label="offset"
+                                name="offset"
+                                required="true"
+                                testWith="0"
+                                type="int"/>
+                     <parameter description=""
+                                label=""
+                                name="authtoken"
+                                nogen="true"
+                                required="false"
+                                testWith="eyJraWQiOiI5NUliMExIS01GaWV3eGZHczFtenEyIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIxSmExdktwVFY4eWZGZkF1cVExNTBRIiwiaXNzIjoiaHR0cHM6Ly9kbXAtdXMuaW5mb3JtYXRpY2FjbG91ZC5jb20vYXV0aHotc2VydmljZSIsImNsaWVudF9pZCI6IjFKYTF2S3BUVjh5ZkZmQXVxUTE1MFEiLCJhdWQiOiJBUElDIiwibmJmIjoxNzQyOTMzOTg2LCJvcmdfaWQiOiI5RzBvV3Fsb0IwdGtDeXlsdGR4N2dBIiwic2NvcGUiOlsiZXhlY3V0ZSJdLCJhZGRpdGlvbmFsX2NsYWltIjoiZXdvZ0lDSjFjMlZ5VG1GdFpTSWdPaUFpWVdKMWJtdGxjbDlEVDAxTlgwWmhhWE5oYkY5MGMzQnZaRjlUVHlJc0NpQWdJbTFoYm1GblpXUkJjR2x6SWlBNklGc2dld29nSUNBZ0ltRndhVWxrSWlBNklDSXlNVFE0TlRZeU1DMWlZekJoTFRSbU9URXRPR013TUMweFpUTTBNekUwWlRkbFpXTWlMQW9nSUNBZ0ltZGhkR1YzWVhsQmNHbEpaQ0lnT2lBaU1XWTVZelV6WXpVdFpEaG1OUzAwTnpjMkxUa3dNMk10WmpaaE1tTmtZV0ZrT0Rjd0lpd0tJQ0FnSUNKMElpQTZJQ0pOSWdvZ0lIMGdYU3dLSUNBaVlXeHNVbVZ6YjNWeVkyVnpJaUE2SUdaaGJITmxDbjA9IiwiZXhwIjoxNzQyOTM3NTg2LCJpYXQiOjE3NDI5MzM5ODYsImNsaWVudF9uYW1lIjoidGVzdCIsImp0aSI6ImNlNDdkODU1LTA0OWMtNGI2Ni1iMGRiLTY5YzNiMDMwM2NhNCJ9.cL5tDXnCrKLjTwXx5rxIfAIsaW1ahEDNhX9hUBOgDfxaClhcQCFklDuUFZkuzhhLvaHkUONjea6fFrKCAG2n6wT4902aT1TDjy4PSDzmKtIY0ktqmhm1csba9msPDJHY80YPYF2rRi4lbzswhK1EXmt-AU6ORlYBZxWhtWpMeF8J4pu_xKw47oG6YtG2cAj8ApMTqKoC937RrK8ZqZ9yOKfYz0x-q_Bx6jRmQ5L1qFC_isome2Hw6inNgm7MC8LQAMoOdJhmR_CAlK7Iii9Bqhw6SRRp5Rw0iosYtLN8DyJn4VzBKr0f9sS-w3xXifyFcieNidRUjsCK1PYKC5CocQ&#xA;"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="https://usw1-gw.dmp-us.informaticacloud.com/9g0owqlob0tkcyyltdx7ga.com/PagedDBAPI/v1/get_records"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Authorization">{'Bearer '||$authtoken}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="STATUS_200_OK"
+                            entireResponse="true"
+                            name="get_recordsResponse"
+                            type="objectlist">
+                        <options>
+                           <option name="relationshipName">Child</option>
+                           <option name="referenceTo">OutputDataList</option>
+                           <option name="guid">OutputDataList</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="OAuth"
+                       maxRedirects="100"
+                       name="OAuth"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://dmp-us.informaticacloud.com/authz-service/oauth/token"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Content-Type">application/x-www-form-urlencoded</header>
+                        </httpHeaders>
+                        <body>client_id={$client_id}&amp;amp;client_secret={$client_secret}&amp;amp;grant_type=client_credentials</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="access_token"
+                            property="access_token"
+                            type="string"/>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              xmlns:aetgt="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                              isByCopy="true"
+                              name="root">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="OutputDataList"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">OutputDataList</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              xmlns:aetgt="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                              isByCopy="true"
+                              name="OutputDataList">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="Status" nullable="true" required="false" type="string"/>
+                     <field name="CC_Type" nullable="true" required="false" type="string"/>
+                     <field name="Email" nullable="true" required="false" type="string"/>
+                     <field name="Address" nullable="true" required="false" type="string"/>
+                     <field name="Tier" nullable="true" required="false" type="int"/>
+                     <field name="Address2" nullable="true" required="false" type="string"/>
+                     <field name="Party_ID" nullable="true" required="false" type="int"/>
+                     <field name="City" nullable="true" required="false" type="string"/>
+                     <field name="Gender" nullable="true" required="false" type="string"/>
+                     <field name="Name" nullable="true" required="false" type="string"/>
+                     <field name="Last_Updt" nullable="true" required="false" type="string"/>
+                     <field name="Consumer" nullable="true" required="false" type="string"/>
+                     <field name="CC_EXP_DT" nullable="true" required="false" type="string"/>
+                     <field name="State" nullable="true" required="false" type="string"/>
+                     <field name="Phone" nullable="true" required="false" type="string"/>
+                     <field name="DOB" nullable="true" required="false" type="string"/>
+                     <field name="CC_Num" nullable="true" required="false" type="string"/>
+                     <field name="Zipcode" nullable="true" required="false" type="int"/>
+                     <field name="Country" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>5UOQzIpW6sNjBfRuLmHVAI</types1:GUID>
+      <types1:DisplayName>Paginated DB API</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-05-13T16:07:57.42Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

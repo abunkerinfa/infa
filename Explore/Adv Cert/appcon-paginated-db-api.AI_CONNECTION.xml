@@ -1,0 +1,48 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Cs4MAreFRqXpIW7-gt-1555805-2024-12-06T21:05:04.61Z::conn.xml</types1:EntryId>
+      <types1:Name>appcon-paginated-db-api</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>abunker_COMM_Faisal_tspod_SO</types1:CreatedBy>
+      <types1:CreationDate>2024-12-06T21:05:05Z</types1:CreationDate>
+      <types1:ModifiedBy>abunker_COMM_Faisal_tspod_SO</types1:ModifiedBy>
+      <types1:ModificationDate>2024-12-10T18:18:54Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>abunker_COMM_Faisal_tspod_SO</types1:PublishedBy>
+      <types1:PublicationDate>2024-12-10T18:18:59Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/appcon-paginated-db-api/appcon-paginated-db-api.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="appcon-paginated-db-api"
+                     label="appcon-paginated-db-api"
+                     name="appcon-paginated-db-api">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="true" name="client_id" value=""/>
+               <attribute encrypted="true" name="client_secret" value=""/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/Paginated_DB_API/Paginated_DB_API_svcDef.xml"
+                               guid="5UOQzIpW6sNjBfRuLmHVAI"
+                               name="Paginated_DB_API"
+                               supportsConnectionTest="false"
+                               uuid="44886c04-90bd-4dd3-8184-c1d802fefe74">
+               <description>Paginate_query_db</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>0IKsqKWuW6ygSlFKN7kRoV</types1:GUID>
+      <types1:DisplayName>appcon-paginated-db-api</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-05-13T16:07:58.432Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

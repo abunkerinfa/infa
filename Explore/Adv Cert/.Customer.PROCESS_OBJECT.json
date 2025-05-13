@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "0hkZ9l9oyREe2Q6fFi62UG",
+    "name" : "Customer",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "OOVGuDoWn2sqeEr-gt-629898-2024-11-19T22:10:59.653Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-05-13T16:08:01.424Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

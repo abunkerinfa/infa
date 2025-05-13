@@ -1,0 +1,242 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>C46snSDg8SOlA1v-gt-829425-2024-11-23T23:10:46.457Z::pd.xml</types1:EntryId>
+      <types1:Name>p_query_db-1</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>abunker_COMM_Faisal_tspod_SO</types1:CreatedBy>
+      <types1:CreationDate>2024-11-23T23:10:46Z</types1:CreationDate>
+      <types1:ModifiedBy>abunker_COMM_Faisal_tspod_SO</types1:ModifiedBy>
+      <types1:ModificationDate>2024-12-06T18:17:28Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>abunker_COMM_Faisal_tspod_SO</types1:PublishedBy>
+      <types1:PublicationDate>2024-12-06T18:17:34Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.p_query_db-1/p_query_db-1.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="0FLe2EoeUEfgDfq1KzpIMF"
+                  displayName="p_query_db"
+                  name="p_query_db-1"
+                  overrideAPIName="false"
+                  processNamespace="urn:screenflow:process:">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="offset" required="true" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="fetch" required="true" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="OutputDataList" type="objectlist">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">$po:Customer-1</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">0hkZ9l9oyREe2Q6fFi62UG</option>
+                     <option hide="true" name="multiSelect">true</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="TableDataList" type="objectlist">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">appcon-das-mssql:row</option>
+                     <option name="guid">8KPn1mGZchvgM7wUmdOu21</option>
+                     <option name="isCopy">true</option>
+                     <option hide="true" name="multiSelect">true</option>
+                  </options>
+               </field>
+               <field description="" name="RowData" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">appcon-das-mssql:row</option>
+                     <option name="guid">8KPn1mGZchvgM7wUmdOu21</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="OutputColumns" type="reference">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="referenceTo">$po:Customer-1</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">0hkZ9l9oyREe2Q6fFi62UG</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+            </extData>
+            <flow id="o33219009-ece0-4681-8851-82f9b11879ad">
+               <start id="s065d584c-3b33-44d2-87d2-d6ec60b65854">
+                  <link id="y2ff5d3ea-16c3-49c8-b167-a8c5abf79eb0"
+                        targetId="a10FLe2EoeUEfgDfq1KzpIMF-Service64c88146-4609-417a-ada4-3892f8d4faa4"/>
+               </start>
+               <service id="a10FLe2EoeUEfgDfq1KzpIMF-Service64c88146-4609-417a-ada4-3892f8d4faa4">
+                  <title>Select</title>
+                  <serviceName>appcon-das-mssql:Select</serviceName>
+                  <serviceGUID>8KPn1mGZchvgM7wUmdOu21</serviceGUID>
+                  <serviceInput>
+                     <parameter name="limit" source="field">input.fetch</parameter>
+                     <parameter name="offset" source="field">input.offset</parameter>
+                  </serviceInput>
+                  <link id="k095e8cb6-21b5-44e8-8167-4adca2dcc01c"
+                        targetId="a10FLe2EoeUEfgDfq1KzpIMF-Assignmentbf337084-d7f3-4948-b2fe-460d18425b5a"/>
+               </service>
+               <assignment id="a10FLe2EoeUEfgDfq1KzpIMF-Assignmentbf337084-d7f3-4948-b2fe-460d18425b5a">
+                  <title>Assignment to TableDataList</title>
+                  <operation source="field" to="temp.TableDataList">output.Src_rows</operation>
+                  <link id="d317fa473-c418-44ca-ac1d-5247f5e81e4f"
+                        targetId="a10FLe2EoeUEfgDfq1KzpIMF-jnml46mi"/>
+               </assignment>
+               <assignment id="a10FLe2EoeUEfgDfq1KzpIMF-jnml46mi">
+                  <title>Get Individual Row Data</title>
+                  <operation source="formula" to="temp.RowData">
+                     <expression language="XQuery">list:head($temp.TableDataList) </expression>
+                  </operation>
+                  <operation source="formula" to="temp.TableDataList">
+                     <expression language="XQuery">list:tail($temp.TableDataList) 
+
+</expression>
+                  </operation>
+                  <link id="b9e7c5641-1d44-4e2a-8599-42aef99cb90d"
+                        targetId="a10FLe2EoeUEfgDfq1KzpIMF-jnml46mr"/>
+               </assignment>
+               <assignment id="a10FLe2EoeUEfgDfq1KzpIMF-jnml46mr">
+                  <title>Populate  Process Object Fields With Row Data</title>
+                  <operation source="formula" to="temp.OutputColumns[1]/Address">
+                     <expression language="XQuery">$temp.RowData.address</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Address2">
+                     <expression language="XQuery">$temp.RowData.address2</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/CC_EXP_DT">
+                     <expression language="XQuery">$temp.RowData.cc_exp_dt</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/CC_Num">
+                     <expression language="XQuery">$temp.RowData.cc_num</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/CC_Type">
+                     <expression language="XQuery">$temp.RowData.cc_type</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/City">
+                     <expression language="XQuery">$temp.RowData.city</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Consumer">
+                     <expression language="XQuery">$temp.RowData.consumer</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Country">
+                     <expression language="XQuery">$temp.RowData.country</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/DOB">
+                     <expression language="XQuery">$temp.RowData.dob</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Email">
+                     <expression language="XQuery">$temp.RowData.email</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Gender">
+                     <expression language="XQuery">$temp.RowData.gender</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Last_Updt">
+                     <expression language="XQuery">$temp.RowData.last_updt</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Name">
+                     <expression language="XQuery">$temp.RowData.name</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Party_ID">
+                     <expression language="XQuery">$temp.RowData.party_id</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Phone">
+                     <expression language="XQuery">$temp.RowData.phone</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/State">
+                     <expression language="XQuery">$temp.RowData.state</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Status">
+                     <expression language="XQuery">$temp.RowData.status</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Tier">
+                     <expression language="XQuery">$temp.RowData.tier</expression>
+                  </operation>
+                  <operation source="formula" to="temp.OutputColumns[1]/Zipcode">
+                     <expression language="XQuery">$temp.RowData.zipcode</expression>
+                  </operation>
+                  <link id="ze5df845d-cba3-45ac-94c4-1dfdf983bee7"
+                        targetId="a10FLe2EoeUEfgDfq1KzpIMF-jnnchx7f"/>
+               </assignment>
+               <assignment id="a10FLe2EoeUEfgDfq1KzpIMF-jnnchx7f">
+                  <title>Add Row Data To the Process Object List</title>
+                  <operation source="formula" to="output.OutputDataList">
+                     <function name="list:append">
+                        <arg name="dest_field">{$output.OutputDataList}</arg>
+                        <arg name="new_field">{$temp.OutputColumns}</arg>
+                     </function>
+                  </operation>
+                  <link id="t832d93d4-beae-40c1-80e7-1b5e6e289b4d"
+                        targetId="a10FLe2EoeUEfgDfq1KzpIMF-jnml46oo"/>
+               </assignment>
+               <container id="a10FLe2EoeUEfgDfq1KzpIMF-jnml46oo" type="exclusive">
+                  <title>Check if the TableDataList is Empty</title>
+                  <flow id="rc7c266be-3227-4783-8734-894a439953b3">
+                     <jumpTo id="a10FLe2EoeUEfgDfq1KzpIMF-jnnd898m">
+                        <link id="f89ba05ac-186a-445c-b25e-8faecb786edb"
+                              targetId="a10FLe2EoeUEfgDfq1KzpIMF-jnml46mi"/>
+                     </jumpTo>
+                  </flow>
+                  <flow id="m86e7d789-b7ec-427b-b4cb-a24d840f58af">
+                     <end id="a10FLe2EoeUEfgDfq1KzpIMF-jnnd898x">
+                        <title>End</title>
+                     </end>
+                  </flow>
+                  <link id="b15ccafa6-2d2c-4c2c-bab7-7d9a9af971cf"
+                        targetId="rc7c266be-3227-4783-8734-894a439953b3"
+                        type="containerLink">
+                     <condition source="formula">
+                        <function name="not-empty">
+                           <arg name="field">{$temp.TableDataList}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="ja316c743-4889-4005-a3c9-6674cfeb1635"
+                        targetId="m86e7d789-b7ec-427b-b4cb-a24d840f58af"
+                        type="containerLink">
+                     <condition source="formula">
+                        <function name="empty">
+                           <arg name="field">{$temp.TableDataList}</arg>
+                        </function>
+                     </condition>
+                  </link>
+               </container>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>0FLe2EoeUEfgDfq1KzpIMF</types1:GUID>
+      <types1:DisplayName>p_query_db</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-05-13T16:08:00.273Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

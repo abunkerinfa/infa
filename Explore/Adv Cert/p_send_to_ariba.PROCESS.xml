@@ -1,0 +1,100 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>txGomUhGdwOLIFv-gt-2269075-2024-12-16T23:26:37.322Z::pd.xml</types1:EntryId>
+      <types1:Name>p_send_to_ariba</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:idmc04-comm-faisal-primary.infacloud.eu</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>abunker_COMM_Faisal_tspod_SO</types1:CreatedBy>
+      <types1:CreationDate>2024-12-16T23:26:37Z</types1:CreationDate>
+      <types1:ModifiedBy>abunker_COMM_Faisal_tspod_SO</types1:ModifiedBy>
+      <types1:ModificationDate>2024-12-17T18:01:49Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>abunker_COMM_Faisal_tspod_SO</types1:PublishedBy>
+      <types1:PublicationDate>2024-12-17T18:02:22Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.p_send_to_ariba/p_send_to_ariba.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="46tSrYrnkZmdnbtRUKCI00"
+                  displayName="p_send_to_ariba"
+                  name="p_send_to_ariba"
+                  overrideAPIName="false"
+                  processNamespace="urn:screenflow:process:">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:idmc04-comm-faisal-primary.infacloud.eu</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="base64" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>idmc04-comm-faisal-primary.infacloud.eu</targetLocation>
+               <rest>
+                  <allowedUsers>
+                     <user>abunker_COMM_Faisal_tspod_SO</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+            </extData>
+            <flow id="j1dd863a7-0abc-4b77-8ee7-6897a9537fba">
+               <start id="r9b4e3652-f331-450c-b79c-17dd65c973eb">
+                  <link id="ufefbf5a4-34f8-4dbb-8707-4ba1ba893111"
+                        targetId="a146tSrYrnkZmdnbtRUKCI00-Service8b96dcfc-b448-46a6-bbe5-1892d53fb2a6"/>
+               </start>
+               <service id="a146tSrYrnkZmdnbtRUKCI00-Service8b96dcfc-b448-46a6-bbe5-1892d53fb2a6">
+                  <title>Run a Shell Command</title>
+                  <serviceName>avShellService</serviceName>
+                  <serviceInput>
+                     <parameter name="command" source="constant">/apps/infa/base64.bash</parameter>
+                     <parameter name="workingDirPath" source="constant">/apps/infa</parameter>
+                  </serviceInput>
+                  <link id="nff116b4d-1700-4a8b-bd29-628ab5b33db9"
+                        targetId="a146tSrYrnkZmdnbtRUKCI00-Assignment7e7513c2-b07a-4824-83bc-3a1b005ea0ac"/>
+               </service>
+               <service id="a146tSrYrnkZmdnbtRUKCI00-Service2827a635-876e-4c79-ba9a-13f566ed1aaf">
+                  <title>EventImportOperation</title>
+                  <serviceName>app-conn-ariba:EventImportOperation</serviceName>
+                  <serviceGUID>5hXljgoKG0Mc86HdsHQiqR</serviceGUID>
+                  <serviceInput>
+                     <parameter name="EventImportRequest" source="formula">
+                        <expression language="XQuery">$temp.base64</expression>
+                     </parameter>
+                  </serviceInput>
+                  <link id="x576fbcee-3b8e-4a1d-8765-5d4a9be22ac3"
+                        targetId="a146tSrYrnkZmdnbtRUKCI00-end-eebfedd10-a7fe-4099-8021-3cb54e95a636"/>
+               </service>
+               <assignment id="a146tSrYrnkZmdnbtRUKCI00-Assignment7e7513c2-b07a-4824-83bc-3a1b005ea0ac">
+                  <title>Assign to base64</title>
+                  <operation source="constant" to="temp.base64"/>
+                  <link id="o5cf5b7c0-af6e-415f-90c4-b9c8df6d8ca3"
+                        targetId="a146tSrYrnkZmdnbtRUKCI00-Service2827a635-876e-4c79-ba9a-13f566ed1aaf"/>
+               </assignment>
+               <end id="a146tSrYrnkZmdnbtRUKCI00-end-eebfedd10-a7fe-4099-8021-3cb54e95a636">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>46tSrYrnkZmdnbtRUKCI00</types1:GUID>
+      <types1:DisplayName>p_send_to_ariba</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-05-13T16:08:00.253Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

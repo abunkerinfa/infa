@@ -1,0 +1,2295 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_get_records",
+    "links" : [
+      {
+        "link" : "s_paginated_api -> Router",
+        "groupLink" : "OutputDataList -> INPUT"
+      },
+      {
+        "link" : "Router -> t_AWS_ConB",
+        "groupLink" : "ConsumerB -> DefaultGroup"
+      },
+      {
+        "link" : "Router -> t_Snowflake_ConC",
+        "groupLink" : "ConsumerC -> DefaultGroup"
+      },
+      {
+        "link" : "Router -> HierarchyBuilder",
+        "groupLink" : "ConsumerA -> DefaultGroup"
+      },
+      {
+        "link" : "HierarchyBuilder -> t_JSON_ConA",
+        "groupLink" : "DefaultOutputGroup -> DefaultGroup"
+      },
+      {
+        "link" : "Router -> t_flatfile",
+        "groupLink" : "All -> DefaultGroup"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2024-12-10T23:22:30.016Z",
+        "name" : "s_paginated_api",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Verbose Data"
+          },
+          {
+            "name" : "responseXmlSize",
+            "value" : "1024"
+          },
+          {
+            "name" : "performanceMode",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "OutputDataList",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@5a3XXyitcw8jwsDCl1J6iP",
+          "connectionName" : "Paginated API",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "OPERATION",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "get_records",
+            "label" : "get_records",
+            "objectName" : "get_records",
+            "path" : "get_records",
+            "retainMetadata" : "false"
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false",
+            "requestXml" : "{\n  \"offset\" : 50,\n  \"fetch\" : 500\n}"
+          }
+        },
+        "xFieldMap" : {
+          "denormalized" : "false",
+          "mappings" : [
+            {
+              "groupName" : "OutputDataList",
+              "isRoot" : "false",
+              "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList",
+              "xfields" : [
+                {
+                  "name" : "Party_ID",
+                  "platformType" : {
+                    "name" : "decimal"
+                  },
+                  "precision" : 10,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Party_ID"
+                },
+                {
+                  "name" : "Name",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Name"
+                },
+                {
+                  "name" : "Address",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Address"
+                },
+                {
+                  "name" : "Address2",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Address2"
+                },
+                {
+                  "name" : "City",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:City"
+                },
+                {
+                  "name" : "State",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:State"
+                },
+                {
+                  "name" : "Zipcode",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Zipcode"
+                },
+                {
+                  "name" : "Country",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Country"
+                },
+                {
+                  "name" : "Phone",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Phone"
+                },
+                {
+                  "name" : "Email",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Email"
+                },
+                {
+                  "name" : "Status",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Status"
+                },
+                {
+                  "name" : "Tier",
+                  "platformType" : {
+                    "name" : "decimal"
+                  },
+                  "precision" : 10,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Tier"
+                },
+                {
+                  "name" : "Gender",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Gender"
+                },
+                {
+                  "name" : "DOB",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:DOB"
+                },
+                {
+                  "name" : "CC_Type",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:CC_Type"
+                },
+                {
+                  "name" : "CC_Num",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:CC_Num"
+                },
+                {
+                  "name" : "CC_EXP_DT",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:CC_EXP_DT"
+                },
+                {
+                  "name" : "Last_Updt",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Last_Updt"
+                },
+                {
+                  "name" : "Consumer",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:Response_200/json:OutputDataListArray/json:OutputDataList/json:Consumer"
+                }
+              ]
+            }
+          ],
+          "packed" : {
+            "packedFields" : null
+          }
+        }
+      },
+      {
+        "createTime" : "2024-12-10T23:22:30.016Z",
+        "name" : "t_AWS_ConB",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Party_ID"
+            },
+            "name" : "Party_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Name"
+            },
+            "name" : "Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Address"
+            },
+            "name" : "Address",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Address2"
+            },
+            "name" : "Address2",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "City"
+            },
+            "name" : "City",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "State"
+            },
+            "name" : "State",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Zipcode"
+            },
+            "name" : "Zipcode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Country"
+            },
+            "name" : "Country",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Phone"
+            },
+            "name" : "Phone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Email"
+            },
+            "name" : "Email",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Status"
+            },
+            "name" : "Status",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Tier"
+            },
+            "name" : "Tier",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Gender"
+            },
+            "name" : "Gender",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DOB"
+            },
+            "name" : "DOB",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CC_Type"
+            },
+            "name" : "CC_Type",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CC_Num"
+            },
+            "name" : "CC_Num",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CC_EXP_DT"
+            },
+            "name" : "CC_EXP_DT",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Last_Updt"
+            },
+            "name" : "Last_Updt",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Consumer"
+            },
+            "name" : "Consumer",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@4228s7VUHKjbSaBOxDElEi",
+          "connectionName" : "AJB_S3_CommSDE",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "dataFormat" : {
+            "formatId" : "Flat",
+            "validateHSchema" : "false",
+            "attributes" : [
+              {
+                "name" : "delimiter",
+                "value" : ","
+              },
+              {
+                "name" : "escapeChar",
+                "value" : "\\"
+              },
+              {
+                "name" : "qualifier",
+                "value" : "\""
+              },
+              {
+                "name" : "qualifierMode",
+                "value" : "MINIMAL"
+              },
+              {
+                "name" : "disableEscapeChar",
+                "value" : "true"
+              },
+              {
+                "name" : "codePage",
+                "value" : "UTF-8"
+              },
+              {
+                "name" : "headerLineNumber",
+                "value" : "1"
+              },
+              {
+                "name" : "firstDataRow",
+                "value" : "2"
+              },
+              {
+                "name" : "targetHeader",
+                "value" : "With Header"
+              },
+              {
+                "name" : "importColumnFromFirstLine",
+                "value" : "true"
+              },
+              {
+                "name" : "generateHeader",
+                "value" : "true"
+              },
+              {
+                "name" : "fixedWidthMode",
+                "value" : "false"
+              },
+              {
+                "name" : "maxRowsToPreview",
+                "value" : "0"
+              }
+            ]
+          },
+          "object" : {
+            "name" : "abunkerinfa1/adv_cert_flatfile.csv",
+            "label" : "abunkerinfa1/adv_cert_flatfile.csv",
+            "path" : "abunkerinfa1/adv_cert_flatfile.csv",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Party_ID",
+                "fieldType" : "PARSER",
+                "label" : "Party_ID",
+                "nativeName" : "Party_ID",
+                "nativeType" : "flat_number",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Name",
+                "fieldType" : "PARSER",
+                "label" : "Name",
+                "nativeName" : "Name",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Address",
+                "fieldType" : "PARSER",
+                "label" : "Address",
+                "nativeName" : "Address",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Address2",
+                "fieldType" : "PARSER",
+                "label" : "Address2",
+                "nativeName" : "Address2",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "City",
+                "fieldType" : "PARSER",
+                "label" : "City",
+                "nativeName" : "City",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "State",
+                "fieldType" : "PARSER",
+                "label" : "State",
+                "nativeName" : "State",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Zipcode",
+                "fieldType" : "PARSER",
+                "label" : "Zipcode",
+                "nativeName" : "Zipcode",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Country",
+                "fieldType" : "PARSER",
+                "label" : "Country",
+                "nativeName" : "Country",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Phone",
+                "fieldType" : "PARSER",
+                "label" : "Phone",
+                "nativeName" : "Phone",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Email",
+                "fieldType" : "PARSER",
+                "label" : "Email",
+                "nativeName" : "Email",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Status",
+                "fieldType" : "PARSER",
+                "label" : "Status",
+                "nativeName" : "Status",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Tier",
+                "fieldType" : "PARSER",
+                "label" : "Tier",
+                "nativeName" : "Tier",
+                "nativeType" : "flat_number",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Gender",
+                "fieldType" : "PARSER",
+                "label" : "Gender",
+                "nativeName" : "Gender",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "DOB",
+                "fieldType" : "PARSER",
+                "label" : "DOB",
+                "nativeName" : "DOB",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "CC_Type",
+                "fieldType" : "PARSER",
+                "label" : "CC_Type",
+                "nativeName" : "CC_Type",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "CC_Num",
+                "fieldType" : "PARSER",
+                "label" : "CC_Num",
+                "nativeName" : "CC_Num",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "CC_EXP_DT",
+                "fieldType" : "PARSER",
+                "label" : "CC_EXP_DT",
+                "nativeName" : "CC_EXP_DT",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Last_Updt",
+                "fieldType" : "PARSER",
+                "label" : "Last_Updt",
+                "nativeName" : "Last_Updt",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Consumer",
+                "fieldType" : "PARSER",
+                "label" : "Consumer",
+                "nativeName" : "Consumer",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "adv_cert_flatfile.csv"
+                  }
+                ]
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2024-12-10T23:43:31.550Z",
+        "name" : "t_Snowflake_ConC",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Party_ID"
+            },
+            "name" : "Party_ID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Name"
+            },
+            "name" : "Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Address"
+            },
+            "name" : "Address",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Address2"
+            },
+            "name" : "Address2",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "City"
+            },
+            "name" : "City",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "State"
+            },
+            "name" : "State",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Zipcode"
+            },
+            "name" : "Zipcode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Country"
+            },
+            "name" : "Country",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Phone"
+            },
+            "name" : "Phone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Email"
+            },
+            "name" : "Email",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Status"
+            },
+            "name" : "Status",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Tier"
+            },
+            "name" : "Tier",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Gender"
+            },
+            "name" : "Gender",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DOB"
+            },
+            "name" : "DOB",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CC_Type"
+            },
+            "name" : "CC_Type",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CC_Num"
+            },
+            "name" : "CC_Num",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CC_EXP_DT"
+            },
+            "name" : "CC_EXP_DT",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Last_Updt"
+            },
+            "name" : "Last_Updt",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Consumer"
+            },
+            "name" : "Consumer",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@jQhWOrmHdY7d8r1sQ5DqyN",
+          "connectionName" : "Snowflake",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "AJB_DEMODB/PUBLIC/ADV_CERT_TABLE",
+            "label" : "AJB_DEMODB/PUBLIC/ADV_CERT_TABLE",
+            "objectName" : "ADV_CERT_TABLE",
+            "objectType" : "table",
+            "path" : "AJB_DEMODB/PUBLIC/ADV_CERT_TABLE",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Party_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Party_ID",
+                "nativeName" : "Party_ID",
+                "nativeType" : "number",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Name",
+                "nativeName" : "Name",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Address",
+                "fieldType" : "CONNECTOR",
+                "label" : "Address",
+                "nativeName" : "Address",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Address2",
+                "fieldType" : "CONNECTOR",
+                "label" : "Address2",
+                "nativeName" : "Address2",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "City",
+                "fieldType" : "CONNECTOR",
+                "label" : "City",
+                "nativeName" : "City",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "State",
+                "fieldType" : "CONNECTOR",
+                "label" : "State",
+                "nativeName" : "State",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Zipcode",
+                "fieldType" : "CONNECTOR",
+                "label" : "Zipcode",
+                "nativeName" : "Zipcode",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Country",
+                "fieldType" : "CONNECTOR",
+                "label" : "Country",
+                "nativeName" : "Country",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Phone",
+                "fieldType" : "CONNECTOR",
+                "label" : "Phone",
+                "nativeName" : "Phone",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Email",
+                "fieldType" : "CONNECTOR",
+                "label" : "Email",
+                "nativeName" : "Email",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Status",
+                "fieldType" : "CONNECTOR",
+                "label" : "Status",
+                "nativeName" : "Status",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Tier",
+                "fieldType" : "CONNECTOR",
+                "label" : "Tier",
+                "nativeName" : "Tier",
+                "nativeType" : "number",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Gender",
+                "fieldType" : "CONNECTOR",
+                "label" : "Gender",
+                "nativeName" : "Gender",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "DOB",
+                "fieldType" : "CONNECTOR",
+                "label" : "DOB",
+                "nativeName" : "DOB",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "CC_Type",
+                "fieldType" : "CONNECTOR",
+                "label" : "CC_Type",
+                "nativeName" : "CC_Type",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "CC_Num",
+                "fieldType" : "CONNECTOR",
+                "label" : "CC_Num",
+                "nativeName" : "CC_Num",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "CC_EXP_DT",
+                "fieldType" : "CONNECTOR",
+                "label" : "CC_EXP_DT",
+                "nativeName" : "CC_EXP_DT",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Last_Updt",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last_Updt",
+                "nativeName" : "Last_Updt",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              },
+              {
+                "name" : "Consumer",
+                "fieldType" : "CONNECTOR",
+                "label" : "Consumer",
+                "nativeName" : "Consumer",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ADV_CERT_TABLE"
+                  }
+                ]
+              }
+            ],
+            "objectAttributes" : [
+              {
+                "name" : "tableType",
+                "value" : "TABLE"
+              }
+            ]
+          },
+          "runtimeAttributes" : {
+            "attributes" : [
+              {
+                "name" : "UpdateMode",
+                "value" : "Update As Update"
+              },
+              {
+                "name" : "Truncate Target Table",
+                "value" : "YES"
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2024-12-10T23:43:44.223Z",
+        "name" : "Router",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "INPUT",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "DEFAULT1",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "ConsumerB",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "ConsumerC",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "ConsumerA",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "All",
+            "output" : "true"
+          }
+        ],
+        "groupFilterConditions" : [
+          {
+            "name" : "ConsumerB",
+            "simpleFilterConditions" : [
+              {
+                "fieldName" : "Consumer",
+                "filterValue" : "ConsumerB",
+                "operator" : "="
+              }
+            ]
+          },
+          {
+            "advancedFilterCondition" : "Consumer='ConsumerC'",
+            "name" : "ConsumerC"
+          },
+          {
+            "name" : "ConsumerA",
+            "simpleFilterConditions" : [
+              {
+                "fieldName" : "Consumer",
+                "filterValue" : "ConsumerA",
+                "operator" : "="
+              }
+            ]
+          },
+          {
+            "name" : "All",
+            "simpleFilterConditions" : [
+              {
+                "fieldName" : "Party_ID",
+                "filterValue" : "1",
+                "operator" : ">"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "createTime" : "2024-12-10T23:45:02.632Z",
+        "name" : "t_flatfile",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Create Target Directory",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "Output Field Names"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@5016o1Ayou6jv8qxF6v1QW",
+          "connectionName" : "Container flat files",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "adv_cert_all_records.csv",
+            "label" : "adv_cert_all_records.csv",
+            "path" : "adv_cert_all_records.csv",
+            "retainMetadata" : "false",
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2024-12-11T17:05:55.055Z",
+        "name" : "t_JSON_ConA",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@1CYNDfs0FG3d5kgkeBgAGw",
+          "connectionName" : "Adv Cert - Receive Data",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "OPERATION",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "p_receive_dataOperation",
+            "label" : "p_receive_dataOperation",
+            "objectName" : "p_receive_dataOperation",
+            "path" : "p_receive_dataOperation",
+            "retainMetadata" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        },
+        "xFieldMap" : {
+          "denormalized" : "false",
+          "mappings" : [
+            {
+              "groupName" : "HierarchyBuilder",
+              "isRoot" : "false",
+              "xPath" : "/INFA:p_receive_dataOperation_INPUT",
+              "xfields" : [
+                {
+                  "name" : "Output",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 1048576,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/INFA:p_receive_dataOperation_INPUT/p_receive_dataOperation/Input"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "createTime" : "2024-12-11T17:31:31.015Z",
+        "name" : "HierarchyBuilder",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "DefaultOutputGroup",
+            "output" : "true"
+          }
+        ],
+        "collectAllRoots" : "true",
+        "enablePassthrough" : "false",
+        "inputSorted" : "false",
+        "outputFormat" : "String",
+        "outputType" : "NONE",
+        "performanceMode" : "true",
+        "schemaId" : "@1nFYm6Ht9WllSX5EWgM4wS",
+        "schemaName" : "adv_cert_schema",
+        "uiCollectAllRoots" : "false",
+        "useLabels" : "false",
+        "outputFieldPrecision" : 1048576,
+        "outputField" : {
+          "name" : "Output",
+          "platformType" : {
+            "name" : "string"
+          },
+          "precision" : 1048576,
+          "scale" : 0
+        },
+        "xFieldMap" : {
+          "denormalized" : "false",
+          "mappings" : [
+            {
+              "groupName" : "Router",
+              "isRoot" : "false",
+              "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList",
+              "xfields" : [
+                {
+                  "name" : "Party_ID",
+                  "platformType" : {
+                    "name" : "decimal"
+                  },
+                  "precision" : 10,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Party_ID"
+                },
+                {
+                  "name" : "Name",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Name"
+                },
+                {
+                  "name" : "Address",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Address"
+                },
+                {
+                  "name" : "Address2",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Address2"
+                },
+                {
+                  "name" : "City",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:City"
+                },
+                {
+                  "name" : "State",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:State"
+                },
+                {
+                  "name" : "Zipcode",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Zipcode"
+                },
+                {
+                  "name" : "Country",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Country"
+                },
+                {
+                  "name" : "Phone",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Phone"
+                },
+                {
+                  "name" : "Email",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Email"
+                },
+                {
+                  "name" : "Status",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Status"
+                },
+                {
+                  "name" : "Tier",
+                  "platformType" : {
+                    "name" : "decimal"
+                  },
+                  "precision" : 10,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Tier"
+                },
+                {
+                  "name" : "Gender",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Gender"
+                },
+                {
+                  "name" : "DOB",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:DOB"
+                },
+                {
+                  "name" : "CC_Type",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:CC_Type"
+                },
+                {
+                  "name" : "CC_Num",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:CC_Num"
+                },
+                {
+                  "name" : "CC_EXP_DT",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:CC_EXP_DT"
+                },
+                {
+                  "name" : "Last_Updt",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Last_Updt"
+                },
+                {
+                  "name" : "Consumer",
+                  "platformType" : {
+                    "name" : "string"
+                  },
+                  "precision" : 255,
+                  "scale" : 0,
+                  "foreignKey" : "false",
+                  "primaryKey" : "false",
+                  "xPath" : "/json:root/json:OutputDataListArray/json:OutputDataList/json:Consumer"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-05-13 09:07:59 PDT"
+}
