@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "a0oL61vkGWHcaBOgj91lao",
+    "name" : "c_Country_ISO3Char",
+    "type" : "CLEANSE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "a0oL61vkGWHcaBOgj91lao"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Standardizes country names to to their respective 3 letter ISO country codes.",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2026-03-12T17:54:11.729Z",
+  "objectRefs" : [ {
+    "id" : "3vjNYv3Dz2QdOUpXslYG83",
+    "name" : "iso_full_country_name_infa",
+    "type" : "DICTIONARY",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3vjNYv3Dz2QdOUpXslYG83"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This reference table contains ISO full country names and their 2, 3 letter codes.",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Standard CDQ Assets/CDQ Core Bundle"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
