@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "iGf4F7s66o6k5QnBgzmzeZ",
+    "name" : "cisco_products",
+    "type" : "DICTIONARY",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "iGf4F7s66o6k5QnBgzmzeZ"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2026-03-23T20:14:36.272Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "5yRaAVuC73DegjdGHh1Sgz",
+    "name" : "par_product_name",
+    "type" : "PARSE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "5yRaAVuC73DegjdGHh1Sgz"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2026-03-23T20:14:36.269Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

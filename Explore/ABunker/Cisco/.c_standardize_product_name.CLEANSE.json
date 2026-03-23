@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "7FdSz2QZOMke5Xurto8LSx",
+    "name" : "c_standardize_product_name",
+    "type" : "CLEANSE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "7FdSz2QZOMke5Xurto8LSx"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Standardizes product names to enterprise standard",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2026-03-23T20:14:36.269Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

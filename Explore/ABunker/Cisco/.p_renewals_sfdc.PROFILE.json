@@ -1,0 +1,87 @@
+{
+  "objectInfo" : {
+    "id" : "1225sCOdjmrbPzSORCqqiT",
+    "name" : "p_renewals_sfdc",
+    "type" : "PROFILE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "8fe90f48-c762-4d13-976c-1fa88931e5d1"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2026-03-23T20:14:36.269Z",
+  "objectRefs" : [ {
+    "id" : "5yRaAVuC73DegjdGHh1Sgz",
+    "name" : "par_product_name",
+    "type" : "PARSE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "5yRaAVuC73DegjdGHh1Sgz"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/ABunker/Cisco"
+  }, {
+    "id" : "jP4oqI7g5y1dmgVv5zBsQs",
+    "name" : "SFDC_oauth",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010SXT0B00000000000Q"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "9bveorHzSgkiXq7z6QyrOK",
+    "name" : "idmc04-comm-faisal-primary.infacloud.eu",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010SXT2500000000000B"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
