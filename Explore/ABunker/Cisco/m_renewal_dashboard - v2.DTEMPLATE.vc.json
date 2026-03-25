@@ -1,0 +1,1955 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_renewal_dashboard - v2",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "s_snow_renewals -> Union",
+        "groupLink" : "DefaultGroup -> Input1"
+      },
+      {
+        "link" : "s_SFDC_opportunites_OneDrive_file -> Parse",
+        "groupLink" : "DefaultGroup -> Input group:"
+      },
+      {
+        "link" : "Parse -> Expression",
+        "groupLink" : "MappletOutputTx_Output -> DefaultGroup"
+      },
+      {
+        "link" : "Lookup -> Union",
+        "groupLink" : "DefaultGroup -> Input2"
+      },
+      {
+        "link" : "Expression -> Lookup"
+      },
+      {
+        "link" : "Aggregator -> t_Snowflake"
+      },
+      {
+        "link" : "cleanse_product_name -> Aggregator",
+        "groupLink" : "MappletOutputTx_Output -> DefaultGroup"
+      },
+      {
+        "link" : "Union -> cleanse_product_name",
+        "groupLink" : "OutputGroup -> Input group:"
+      }
+    ],
+    "transformations" : [
+      {
+        "augmented" : "false",
+        "createTime" : "2026-03-18T17:41:05.021Z",
+        "name" : "s_SFDC_opportunites_OneDrive_file",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Account_Name"
+            },
+            "name" : "Account_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Opportunity_Name"
+            },
+            "name" : "Opportunity_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Type"
+            },
+            "name" : "Type",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "StageName"
+            },
+            "name" : "StageName",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CloseDate"
+            },
+            "name" : "CloseDate",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Amount"
+            },
+            "name" : "Amount",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Cisco_Adoption_Score__c"
+            },
+            "name" : "Cisco_Adoption_Score__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Loss_Reason__c"
+            },
+            "name" : "Loss_Reason__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@5016o1Ayou6jv8qxF6v1QW",
+          "connectionName" : "Container flat files",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 100000,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "sf_renewals.csv",
+            "label" : "sf_renewals.csv",
+            "objectName" : "sf_renewals.csv",
+            "path" : "sf_renewals.csv",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Account_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Account_Name",
+                "nativeName" : "Account_Name",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "sf_renewals.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Opportunity_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Opportunity_Name",
+                "nativeName" : "Opportunity_Name",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "sf_renewals.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Type",
+                "fieldType" : "CONNECTOR",
+                "label" : "Type",
+                "nativeName" : "Type",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "sf_renewals.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "StageName",
+                "fieldType" : "CONNECTOR",
+                "label" : "StageName",
+                "nativeName" : "StageName",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "sf_renewals.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "CloseDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "CloseDate",
+                "nativeName" : "CloseDate",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "sf_renewals.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Amount",
+                "fieldType" : "CONNECTOR",
+                "label" : "Amount",
+                "nativeName" : "Amount",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "sf_renewals.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Cisco_Adoption_Score__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Cisco_Adoption_Score__c",
+                "nativeName" : "Cisco_Adoption_Score__c",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "sf_renewals.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Loss_Reason__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Loss_Reason__c",
+                "nativeName" : "Loss_Reason__c",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "sf_renewals.csv"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerAndDataDelimiter" : 0,
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2026-03-18T17:41:05.023Z",
+        "name" : "t_Snowflake",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Total_count"
+            },
+            "name" : "Total_count",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Total_value"
+            },
+            "name" : "Total_value",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CONTRACT_ID"
+            },
+            "name" : "CONTRACT_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CUSTOMER_NAME"
+            },
+            "name" : "CUSTOMER_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PRODUCT_FAMILY"
+            },
+            "name" : "PRODUCT_FAMILY",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "REGION"
+            },
+            "name" : "REGION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CONTRACT_END_DATE"
+            },
+            "name" : "CONTRACT_END_DATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ATR_USD"
+            },
+            "name" : "ATR_USD",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "ADOPTION_SCORE"
+            },
+            "name" : "ADOPTION_SCORE",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "RENEWAL_STATUS"
+            },
+            "name" : "RENEWAL_STATUS",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@jQhWOrmHdY7d8r1sQ5DqyN",
+          "connectionName" : "Snowflake",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "AJB_DEMODB/PUBLIC/CISCO_RENEWAL_DASHBOARD",
+            "label" : "AJB_DEMODB/PUBLIC/CISCO_RENEWAL_DASHBOARD",
+            "path" : "AJB_DEMODB/PUBLIC/CISCO_RENEWAL_DASHBOARD",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Total_count",
+                "fieldType" : "CONNECTOR",
+                "label" : "Total_count",
+                "nativeName" : "Total_count",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWAL_DASHBOARD"
+                  }
+                ]
+              },
+              {
+                "name" : "Total_value",
+                "fieldType" : "CONNECTOR",
+                "label" : "Total_value",
+                "nativeName" : "Total_value",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWAL_DASHBOARD"
+                  }
+                ]
+              },
+              {
+                "name" : "CONTRACT_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "CONTRACT_ID",
+                "nativeName" : "CONTRACT_ID",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWAL_DASHBOARD"
+                  }
+                ]
+              },
+              {
+                "name" : "CUSTOMER_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "CUSTOMER_NAME",
+                "nativeName" : "CUSTOMER_NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWAL_DASHBOARD"
+                  }
+                ]
+              },
+              {
+                "name" : "PRODUCT_FAMILY",
+                "fieldType" : "CONNECTOR",
+                "label" : "PRODUCT_FAMILY",
+                "nativeName" : "PRODUCT_FAMILY",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWAL_DASHBOARD"
+                  }
+                ]
+              },
+              {
+                "name" : "REGION",
+                "fieldType" : "CONNECTOR",
+                "label" : "REGION",
+                "nativeName" : "REGION",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWAL_DASHBOARD"
+                  }
+                ]
+              },
+              {
+                "name" : "CONTRACT_END_DATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "CONTRACT_END_DATE",
+                "nativeName" : "CONTRACT_END_DATE",
+                "nativeType" : "timestampntz",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWAL_DASHBOARD"
+                  }
+                ]
+              },
+              {
+                "name" : "ATR_USD",
+                "fieldType" : "CONNECTOR",
+                "label" : "ATR_USD",
+                "nativeName" : "ATR_USD",
+                "nativeType" : "number",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 2,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWAL_DASHBOARD"
+                  }
+                ]
+              },
+              {
+                "name" : "ADOPTION_SCORE",
+                "fieldType" : "CONNECTOR",
+                "label" : "ADOPTION_SCORE",
+                "nativeName" : "ADOPTION_SCORE",
+                "nativeType" : "number",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWAL_DASHBOARD"
+                  }
+                ]
+              },
+              {
+                "name" : "RENEWAL_STATUS",
+                "fieldType" : "CONNECTOR",
+                "label" : "RENEWAL_STATUS",
+                "nativeName" : "RENEWAL_STATUS",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWAL_DASHBOARD"
+                  }
+                ]
+              }
+            ],
+            "objectAttributes" : [
+              {
+                "name" : "tableFormat",
+                "value" : "Standard Table"
+              }
+            ]
+          },
+          "runtimeAttributes" : {
+            "attributes" : [
+              {
+                "name" : "UpdateMode",
+                "value" : "Update As Update"
+              },
+              {
+                "name" : "Truncate Target Table",
+                "value" : "YES"
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false",
+            "tgtObjectAttributes" : [
+              {
+                "name" : "tableFormat",
+                "value" : "Standard Table"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2026-03-18T18:05:26.082Z",
+        "name" : "s_snow_renewals",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "CONTRACT_ID"
+            },
+            "name" : "CONTRACT_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CUSTOMER_NAME"
+            },
+            "name" : "CUSTOMER_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PRODUCT_FAMILY"
+            },
+            "name" : "PRODUCT_FAMILY",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "REGION"
+            },
+            "name" : "REGION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CONTRACT_END_DATE"
+            },
+            "name" : "CONTRACT_END_DATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ATR_USD"
+            },
+            "name" : "ATR_USD",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "ADOPTION_SCORE"
+            },
+            "name" : "ADOPTION_SCORE",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "RENEWAL_STATUS"
+            },
+            "name" : "RENEWAL_STATUS",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@jQhWOrmHdY7d8r1sQ5DqyN",
+          "connectionName" : "Snowflake",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "AJB_DEMODB/PUBLIC/CISCO_RENEWALS",
+            "label" : "AJB_DEMODB/PUBLIC/CISCO_RENEWALS",
+            "objectName" : "CISCO_RENEWALS",
+            "objectType" : "table",
+            "path" : "AJB_DEMODB/PUBLIC/CISCO_RENEWALS",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "CONTRACT_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "CONTRACT_ID",
+                "nativeName" : "CONTRACT_ID",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS"
+                  }
+                ]
+              },
+              {
+                "name" : "CUSTOMER_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "CUSTOMER_NAME",
+                "nativeName" : "CUSTOMER_NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS"
+                  }
+                ]
+              },
+              {
+                "name" : "PRODUCT_FAMILY",
+                "fieldType" : "CONNECTOR",
+                "label" : "PRODUCT_FAMILY",
+                "nativeName" : "PRODUCT_FAMILY",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS"
+                  }
+                ]
+              },
+              {
+                "name" : "REGION",
+                "fieldType" : "CONNECTOR",
+                "label" : "REGION",
+                "nativeName" : "REGION",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS"
+                  }
+                ]
+              },
+              {
+                "name" : "CONTRACT_END_DATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "CONTRACT_END_DATE",
+                "nativeName" : "CONTRACT_END_DATE",
+                "nativeType" : "date",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS"
+                  }
+                ]
+              },
+              {
+                "name" : "ATR_USD",
+                "fieldType" : "CONNECTOR",
+                "label" : "ATR_USD",
+                "nativeName" : "ATR_USD",
+                "nativeType" : "number",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 2,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS"
+                  }
+                ]
+              },
+              {
+                "name" : "ADOPTION_SCORE",
+                "fieldType" : "CONNECTOR",
+                "label" : "ADOPTION_SCORE",
+                "nativeName" : "ADOPTION_SCORE",
+                "nativeType" : "number",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS"
+                  }
+                ]
+              },
+              {
+                "name" : "RENEWAL_STATUS",
+                "fieldType" : "CONNECTOR",
+                "label" : "RENEWAL_STATUS",
+                "nativeName" : "RENEWAL_STATUS",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS"
+                  }
+                ]
+              }
+            ],
+            "objectAttributes" : [
+              {
+                "name" : "tableType",
+                "value" : "TABLE"
+              },
+              {
+                "name" : "storageSerPol",
+                "value" : "Optimized"
+              },
+              {
+                "name" : "tableFormat",
+                "value" : "Standard Table"
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2026-03-18T18:07:00.357Z",
+        "name" : "Union",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Input1",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "true",
+            "name" : "Input2",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "OutputGroup",
+            "output" : "true"
+          }
+        ],
+        "fields" : [
+          {
+            "name" : "CONTRACT_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "name" : "CUSTOMER_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "name" : "PRODUCT_FAMILY",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "name" : "REGION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "name" : "CONTRACT_END_DATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "name" : "ATR_USD",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 2
+          },
+          {
+            "name" : "ADOPTION_SCORE",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "name" : "RENEWAL_STATUS",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "inputGroups" : [
+          {
+            "name" : "Input1",
+            "fieldMappingMode" : "BY_NAME"
+          },
+          {
+            "name" : "Input2",
+            "fieldMappingMode" : "MANUAL",
+            "fieldMapping" : {
+              "fields" : [
+                {
+                  "name" : "CISCO_ADOPTION_SCORE__C",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "ADOPTION_SCORE"
+                  }
+                },
+                {
+                  "name" : "ACCOUNT_NAME",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "CUSTOMER_NAME"
+                  }
+                },
+                {
+                  "name" : "exp_Product_name",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "PRODUCT_FAMILY"
+                  }
+                },
+                {
+                  "name" : "exp_product_end_date",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "CONTRACT_END_DATE"
+                  }
+                },
+                {
+                  "name" : "AMOUNT",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "ATR_USD"
+                  }
+                },
+                {
+                  "name" : "STAGENAME",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "RENEWAL_STATUS"
+                  }
+                },
+                {
+                  "name" : "exp_Region",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "REGION"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "description" : "Parses out product family from opportunity name",
+        "augmented" : "false",
+        "createTime" : "2026-03-18T18:10:35.975Z",
+        "name" : "Parse",
+        "advancedProperties" : [
+          {
+            "name" : "version",
+            "value" : "R37"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Input group:",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "MappletOutputTx_Output",
+            "output" : "true"
+          }
+        ],
+        "assetId" : "@5yRaAVuC73DegjdGHh1Sgz",
+        "inputGroups" : [
+          {
+            "name" : "Input group:",
+            "fieldMappingMode" : "MANUAL",
+            "fieldMapping" : {
+              "fields" : [
+                {
+                  "name" : "Opportunity_Name",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "par_product_name"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "inputFields" : {
+          "fieldList" : [
+            {
+              "name" : "par_product_name",
+              "platformType" : {
+                "name" : "string"
+              },
+              "precision" : 255,
+              "scale" : 0
+            }
+          ]
+        },
+        "outputFields" : {
+          "fieldList" : [
+            {
+              "name" : "Product_name",
+              "platformType" : {
+                "name" : "string"
+              },
+              "precision" : 255,
+              "scale" : 0
+            },
+            {
+              "name" : "Overflow",
+              "platformType" : {
+                "name" : "string"
+              },
+              "precision" : 255,
+              "scale" : 0
+            },
+            {
+              "name" : "Unparsed",
+              "platformType" : {
+                "name" : "string"
+              },
+              "precision" : 255,
+              "scale" : 0
+            }
+          ]
+        }
+      },
+      {
+        "description" : "Expression to calculate product end date (SFDC close date + 24 months)",
+        "augmented" : "false",
+        "createTime" : "2026-03-18T18:10:44.230Z",
+        "name" : "Expression",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "product_end_date",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9,
+            "expFieldType" : "OUTPUT",
+            "expression" : "-- 1. Convert CloseDate from string to date using TO_DATE().\n-- 2. Add 12 months to the converted date using ADD_TO_DATE().\n\nADD_TO_DATE(TO_DATE(CloseDate, 'YYYY-MM-DD'), 'MM', 12)",
+            "userPrompt" : "convert CloseDate from a string to a data and then add 12 months"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "Region",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "'Amer'"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "description" : "Lookup to Snowflake to get adoption score",
+        "augmented" : "false",
+        "createTime" : "2026-03-18T19:49:07.770Z",
+        "name" : "Lookup",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Use Lookup Field Default Value",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Update Dynamic Cache Condition",
+            "value" : "TRUE"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Case Sensitive String Comparison",
+            "value" : "false"
+          },
+          {
+            "name" : "Sorted Input",
+            "value" : "false"
+          },
+          {
+            "name" : "Include Only Required Fields",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "conflictResolutions" : [
+              {
+                "precedingGroupName" : "DefaultGroup",
+                "precedingTxName" : "Expression",
+                "rule" : {
+                  "bulkRename" : "true",
+                  "include" : "true",
+                  "bulkRenameOption" : {
+                    "literal" : "exp_",
+                    "suffix" : "false"
+                  }
+                }
+              }
+            ],
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "multipleMatchPolicy" : "Use Any Value",
+        "unconnected" : "false",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "ACCOUNT_NAME"
+            },
+            "name" : "ACCOUNT_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OPPORTUNITY_NAME"
+            },
+            "name" : "OPPORTUNITY_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "TYPE"
+            },
+            "name" : "TYPE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "STAGENAME"
+            },
+            "name" : "STAGENAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CLOSEDATE"
+            },
+            "name" : "CLOSEDATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "AMOUNT"
+            },
+            "name" : "AMOUNT",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "CISCO_ADOPTION_SCORE__C"
+            },
+            "name" : "CISCO_ADOPTION_SCORE__C",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LOSS_REASON__C"
+            },
+            "name" : "LOSS_REASON__C",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "inputPortNames" : null,
+        "lookupConditions" : [
+          {
+            "leftOperand" : "OPPORTUNITY_NAME",
+            "operator" : "=",
+            "rightOperand" : "exp_Opportunity_Name"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@jQhWOrmHdY7d8r1sQ5DqyN",
+          "connectionName" : "Snowflake",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "AJB_DEMODB/PUBLIC/CISCO_RENEWALS_SFDC",
+            "label" : "AJB_DEMODB/PUBLIC/CISCO_RENEWALS_SFDC",
+            "objectName" : "CISCO_RENEWALS_SFDC",
+            "objectType" : "table",
+            "path" : "AJB_DEMODB/PUBLIC/CISCO_RENEWALS_SFDC",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "ACCOUNT_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "ACCOUNT_NAME",
+                "nativeName" : "ACCOUNT_NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  },
+                  {
+                    "name" : "fixedPartitionKey",
+                    "value" : "false"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS_SFDC"
+                  }
+                ]
+              },
+              {
+                "name" : "OPPORTUNITY_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "OPPORTUNITY_NAME",
+                "nativeName" : "OPPORTUNITY_NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  },
+                  {
+                    "name" : "fixedPartitionKey",
+                    "value" : "false"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS_SFDC"
+                  }
+                ]
+              },
+              {
+                "name" : "TYPE",
+                "fieldType" : "CONNECTOR",
+                "label" : "TYPE",
+                "nativeName" : "TYPE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  },
+                  {
+                    "name" : "fixedPartitionKey",
+                    "value" : "false"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS_SFDC"
+                  }
+                ]
+              },
+              {
+                "name" : "STAGENAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "STAGENAME",
+                "nativeName" : "STAGENAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  },
+                  {
+                    "name" : "fixedPartitionKey",
+                    "value" : "false"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS_SFDC"
+                  }
+                ]
+              },
+              {
+                "name" : "CLOSEDATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "CLOSEDATE",
+                "nativeName" : "CLOSEDATE",
+                "nativeType" : "date",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  },
+                  {
+                    "name" : "fixedPartitionKey",
+                    "value" : "false"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS_SFDC"
+                  }
+                ]
+              },
+              {
+                "name" : "AMOUNT",
+                "fieldType" : "CONNECTOR",
+                "label" : "AMOUNT",
+                "nativeName" : "AMOUNT",
+                "nativeType" : "number",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 2,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  },
+                  {
+                    "name" : "fixedPartitionKey",
+                    "value" : "false"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS_SFDC"
+                  }
+                ]
+              },
+              {
+                "name" : "CISCO_ADOPTION_SCORE__C",
+                "fieldType" : "CONNECTOR",
+                "label" : "CISCO_ADOPTION_SCORE__C",
+                "nativeName" : "CISCO_ADOPTION_SCORE__C",
+                "nativeType" : "number",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  },
+                  {
+                    "name" : "fixedPartitionKey",
+                    "value" : "false"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS_SFDC"
+                  }
+                ]
+              },
+              {
+                "name" : "LOSS_REASON__C",
+                "fieldType" : "CONNECTOR",
+                "label" : "LOSS_REASON__C",
+                "nativeName" : "LOSS_REASON__C",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  },
+                  {
+                    "name" : "fixedPartitionKey",
+                    "value" : "false"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "CISCO_RENEWALS_SFDC"
+                  }
+                ]
+              }
+            ],
+            "objectAttributes" : [
+              {
+                "name" : "tableType",
+                "value" : "TABLE"
+              },
+              {
+                "name" : "storageSerPol",
+                "value" : "Optimized"
+              },
+              {
+                "name" : "tableFormat",
+                "value" : "Standard Table"
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "augmented" : "false",
+        "createTime" : "2026-03-19T17:24:03.571Z",
+        "name" : "Aggregator",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "fields" : [
+          {
+            "name" : "Total_count",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "-- 1. Count the number of non-null records in CONTRACT_ID field.\n-- 2. Use Count function with NOT ISNULL condition.\n\nCount(CONTRACT_ID, NOT ISNULL(CONTRACT_ID))"
+          },
+          {
+            "name" : "Total_value",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "sum(ATR_USD)"
+          }
+        ],
+        "groupByFieldsList" : {
+          "fields" : [
+            {
+              "fieldName" : "PRODUCT_FAMILY_cleanse_product_name"
+            }
+          ]
+        }
+      },
+      {
+        "description" : "This steps corrects product names to their enterprise standard",
+        "augmented" : "false",
+        "createTime" : "2026-03-23T18:57:07.168Z",
+        "name" : "cleanse_product_name",
+        "advancedProperties" : [
+          {
+            "name" : "version",
+            "value" : "R37"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Input group:",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "MappletOutputTx_Output",
+            "output" : "true"
+          }
+        ],
+        "assetId" : "@7FdSz2QZOMke5Xurto8LSx",
+        "inputGroups" : [
+          {
+            "name" : "Input group:",
+            "fieldMappingMode" : "BY_NAME"
+          }
+        ],
+        "inputFields" : {
+          "fieldList" : [
+            {
+              "name" : "PRODUCT_FAMILY",
+              "platformType" : {
+                "name" : "string"
+              },
+              "precision" : 255,
+              "scale" : 0
+            }
+          ]
+        },
+        "outputFields" : {
+          "fieldList" : [
+            {
+              "name" : "PRODUCT_FAMILY_cleanse_product_name",
+              "platformType" : {
+                "name" : "string"
+              },
+              "precision" : 255,
+              "scale" : 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2026-03-25 08:12:44 PDT"
+}
